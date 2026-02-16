@@ -1,0 +1,81 @@
+'use client'
+
+import Image from 'next/image'
+
+/**
+ * Clients Carousel Component - Carrusel infinito de logos
+ * Muestra logos de instituciones que confían en Diplomart
+ * Background: #D7B63A con 15% de opacidad
+ * Animación: Marquee infinito horizontal con logos
+ */
+
+const clientLogos = [
+  { src: '/logo-sidoc.png', alt: 'Fundación SIDOC', url: 'https://fundacionsidoc.org' },
+  { src: '/logo-sc.png', alt: 'Institucion Educativa Santa Cecilia Cali', url: '#' },
+  { src: '/logo-clan.png', alt: 'Colegio Los Ángeles del Norte Cali', url: '#' },
+  { src: '/logo-anglo-americano.png', alt: 'Colegio Anglo Americano Cali', url: 'https://www.colegioangloamericano.edu.co' },
+  { src: '/logo-consac.png', alt: 'Colegio Nuestra Señora de la Anunciacion Cali', url: '#' },
+]
+
+// Duplicate logos for infinite carousel effect (18 total items for smooth animation)
+const extendedLogos = [...clientLogos, ...clientLogos]
+
+export default function ClientsCarousel() {
+  return (
+    <section className="bg-[#D7B63A]/15 overflow-hidden py-8">
+      <div className="mb-8 text-center">
+        <p className="text-[#1A1A1A]/60 font-medium text-sm uppercase tracking-wider">
+          INSTITUCIONES QUE CONFÍAN EN NOSOTROS
+        </p>
+      </div>
+      
+      {/* Infinite Logo Carousel Container */}
+      <div className="relative w-full overflow-hidden">
+        {/* Scrolling Logos Wrapper */}
+        <div className="flex animate-scroll gap-8 items-center py-4">
+          {extendedLogos.map((logo, index) => (
+            <a
+              key={`${logo.alt}-${index}`}
+              href={logo.url}
+              onClick={(e) => logo.url === '#' && e.preventDefault()}
+              target={logo.url !== '#' ? '_blank' : undefined}
+              rel={logo.url !== '#' ? 'noopener noreferrer' : undefined}
+              className="flex-shrink-0 h-28 w-28 flex items-center justify-center hover:opacity-75 transition-opacity duration-300"
+              style={{ pointerEvents: logo.url === '#' ? 'none' : 'auto' }}
+              aria-label={logo.url !== '#' ? `Visitar ${logo.alt}` : logo.alt}
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={112}
+                height={112}
+                className="h-full w-full object-contain"
+                quality={85}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* CSS Animation for Infinite Scroll */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  )
+}
