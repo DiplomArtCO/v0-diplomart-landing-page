@@ -27,9 +27,9 @@ export default function Footer() {
             <Image 
               src="/images/design-mode/Logo%20Texto%20Negro.png" 
               alt="DiplomArt Diplomas para Graduacion Cali" 
-              width={150} 
-              height={50}
-              className="mb-4 object-contain"
+              width={168} 
+              height={56}
+              className="mb-4 h-auto w-40"
             />
             <p className="text-[#1A1A1A]/70 text-sm leading-relaxed">
               Transformamos el esfuerzo en arte. Más de 25 años creando 

@@ -44,15 +44,16 @@ export default function Header() {
           {/* Logo - Clicable para ir al inicio */}
           <button 
             onClick={handleLogoClick}
-            className="flex items-center hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
             aria-label="Volver al inicio"
           >
             <Image 
               src="/images/design-mode/Logo%20Texto%20Negro.png" 
               alt="DiplomArt Diplomas para Graduacion Cali" 
-              width={50} 
-              height={50}
-              className="w-12 h-12 md:h-14 md:w-[168px]"
+              width={168} 
+              height={56}
+              priority
+              className="w-12 h-auto md:w-40 md:h-14"
             />
           </button>
 
