@@ -24,10 +24,10 @@ export default function Hero() {
     >
       {/* Decorative background elements */}
 
-      <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 px-0 mx-40">
         <div className="max-w-6xl mx-auto">
           {/* Image and Text Layout - Side by side */}
-          <article className="flex flex-col lg:flex-row items-center gap-4 md:gap-8 lg:gap-0 mb-8 md:mb-10 mt-5">
+          <article className="flex flex-col lg:flex-row items-center lg:gap-0 ml-0 mr-0 mb-10 mt-5">
             {/* Hand Image - Left */}
             <figure className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <Image 
@@ -35,24 +35,24 @@ export default function Hero() {
                 alt="Mano Negra sosteniendo diploma - Simbolo de El Esfuerzo Hecho Arte" 
                 width={300} 
                 height={400}
-                className="object-contain w-48 md:w-64 h-auto"
+                className="object-contain leading-10 size-64"
               />
             </figure>
 
             {/* Description - Right, aligned to right */}
-            <div className="flex-1 text-center lg:text-right px-2 md:px-0">
-              <p className="text-sm md:text-base lg:text-lg text-[#1A1A1A]/70 leading-relaxed">
+            <div className="flex-1 text-center lg:text-right">
+              <p className="text-base md:text-lg text-[#1A1A1A]/70 leading-relaxed text-pretty">
                 Líderes en soluciones gráficas integrales para instituciones y corporaciones. Nuestra oferta incluye paquetes completos de graduación: <strong>Diplomas, Actas y Carpetas</strong>; y productos de <strong>branding/merchandising</strong> para posicionar TU marca. Trayectoria de +25 años garantizando distinción, calidad y cumplimiento.
               </p>
             </div>
           </article>
 
           {/* CTA Buttons - Centered below */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-2 md:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               onClick={() => scrollToSection('contacto')}
               size="lg"
-              className="bg-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/90 font-semibold text-base group w-full sm:w-auto"
+              className="bg-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/90 font-semibold text-base group"
             >
               <Phone className="w-5 h-5 mr-2" />
               Solicitar Cotización
@@ -63,25 +63,25 @@ export default function Hero() {
               onClick={() => scrollToSection('productos')}
               size="lg"
               variant="outline"
-              className="border-2 border-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/10 font-semibold text-base bg-transparent w-full sm:w-auto"
+              className="border-2 border-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/10 font-semibold text-base bg-transparent"
             >
               Ver Productos
             </Button>
           </div>
 
           {/* Stats Row - Versión simplificada */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16 my-4 md:my-5 px-2">
-            <div className="text-center flex-1 min-w-20">
-              <div className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#D7B63A]">25+</div>
-              <div className="text-xs md:text-sm lg:text-base text-[#1A1A1A]/60 font-medium mt-1">AÑOS</div>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 my-5">
+            <div className="text-center">
+              <div className="font-serif text-4xl md:text-5xl font-bold text-[#D7B63A]">25+</div>
+              <div className="text-sm md:text-base text-[#1A1A1A]/60 font-medium mt-1">AÑOS</div>
             </div>
-            <div className="text-center flex-1 min-w-20 py-1.5">
-              <div className="font-serif font-bold text-[#D7B63A] text-xl md:text-2xl lg:text-3xl leading-tight">Personalización</div>
-              <div className="text-[#1A1A1A]/60 font-medium mt-1 text-xs md:text-sm lg:text-base">AL DETALLE</div>
+            <div className="text-center my-0 py-1.5">
+              <div className="font-serif font-bold text-[#D7B63A] text-3xl">{"Personalización"}</div>
+              <div className="text-[#1A1A1A]/60 font-medium mt-1 text-base">{"AL DETALLE"}</div>
             </div>
-            <div className="text-center flex-1 min-w-20">
-              <div className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#D7B63A]">100%</div>
-              <div className="text-xs md:text-sm lg:text-base text-[#1A1A1A]/60 font-medium mt-1">CALIDAD</div>
+            <div className="text-center">
+              <div className="font-serif text-4xl md:text-5xl font-bold text-[#D7B63A]">100%</div>
+              <div className="text-sm md:text-base text-[#1A1A1A]/60 font-medium mt-1">CALIDAD</div>
             </div>
           </div>
         </div>
