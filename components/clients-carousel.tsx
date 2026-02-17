@@ -50,7 +50,6 @@ export default function ClientsCarousel() {
                 width={112}
                 height={112}
                 className="h-full w-full object-contain"
-                quality={85}
               />
             </a>
           ))}
