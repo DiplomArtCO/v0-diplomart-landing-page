@@ -30,6 +30,7 @@ export default function Footer() {
               width={150} 
               height={50}
               className="mb-4 object-contain"
+              style={{ width: 'auto', height: 'auto' }}
             />
             <p className="text-[#1A1A1A]/70 text-sm leading-relaxed">
               Transformamos el esfuerzo en arte. Más de 25 años creando 

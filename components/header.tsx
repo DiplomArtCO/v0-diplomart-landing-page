@@ -53,6 +53,7 @@ export default function Header() {
               width={50} 
               height={50}
               className="w-12 h-12 md:h-14 md:w-[168px]"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </button>
 
