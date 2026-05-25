@@ -69,7 +69,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Teléfono</h3>
-                  <a href="tel:+573157292101" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 315 7292101</a>
+                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 315 7292101</a>
                 </div>
               </div>
             </div>
