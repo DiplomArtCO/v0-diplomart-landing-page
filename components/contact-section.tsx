@@ -23,12 +23,18 @@ export default function ContactSection() {
   })
 
   const WHATSAPP_NUMBER = '+573184836892'
-  const DEFAULT_MESSAGE = 'Hola, solicito información sobre sus servicios'
+
+  const getDefaultMessage = (name: string, product: string): string => {
+    if (name && product) {
+      return `Hola, mi nombre es ${name} y me interesa información sobre ${product}.`
+    }
+    return 'Hola, solicito información sobre sus servicios'
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    const messageText = formData.mensaje.trim() || DEFAULT_MESSAGE
+    const messageText = formData.mensaje.trim() || getDefaultMessage(formData.name, formData.product)
     const encodedMessage = encodeURIComponent(messageText)
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
     
@@ -77,7 +83,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Teléfono</h3>
-                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 315 7292101</a>
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getDefaultMessage(formData.name, formData.product))}`} target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 315 7292101</a>
                 </div>
               </div>
             </div>
