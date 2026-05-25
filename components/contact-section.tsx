@@ -69,6 +69,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-bold text-lg mb-1">Ubicación</h3>
                   <p className="text-[#1A1A1A]/70">
+                    Calle 20 #3-22 <br />
                     Cali, Valle del Cauca<br />
                     Colombia
                   </p>
