@@ -20,14 +20,14 @@ export default function Hero() {
   return (
     <section 
       id="inicio" 
-      className="relative min-h-[85vh] flex items-center justify-center bg-[#F5F5F7] overflow-hidden pt-0"
+      className="relative min-h-[68vh] flex items-center justify-center bg-[#F5F5F7] overflow-hidden pt-0"
     >
       {/* Decorative background elements */}
 
       <div className="container relative z-10 px-0 mx-40">
         <div className="max-w-6xl mx-auto">
           {/* Image and Text Layout - Side by side */}
-          <article className="flex flex-col lg:flex-row items-center lg:gap-0 ml-0 mr-0 mb-10 mt-5">
+          <article className="flex flex-col lg:flex-row items-center lg:gap-0 ml-0 mr-0 mb-8 mt-4">
             {/* Hand Image - Left */}
             <figure className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <Image 
@@ -48,7 +48,7 @@ export default function Hero() {
           </article>
 
           {/* CTA Buttons - Centered below */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-9.6">
             <Button 
               onClick={() => scrollToSection('contacto')}
               size="lg"
@@ -70,7 +70,7 @@ export default function Hero() {
           </div>
 
           {/* Stats Row - Versión simplificada */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 my-5">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-13 my-4">
             <div className="text-center">
               <div className="font-serif text-4xl md:text-5xl font-bold text-[#D7B63A]">25+</div>
               <div className="text-sm md:text-base text-[#1A1A1A]/60 font-medium mt-1">AÑOS</div>

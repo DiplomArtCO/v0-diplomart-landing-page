@@ -17,8 +17,9 @@ const clientLogos = [
   { src: '/logo-consac.png', alt: 'Colegio Nuestra Señora de la Anunciacion Cali', url: '#' },
 ]
 
-// Duplicate logos for infinite carousel effect (18 total items for smooth animation)
-const extendedLogos = [...clientLogos, ...clientLogos]
+// Duplicate logos multiple times for seamless infinite carousel
+// Using 3x duplication to ensure smooth loop across all breakpoints
+const extendedLogos = [...clientLogos, ...clientLogos, ...clientLogos]
 
 export default function ClientsCarousel() {
   return (
@@ -63,12 +64,13 @@ export default function ClientsCarousel() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-1 * ${clientLogos.length} * (112px + 32px)));
           }
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
+          will-change: transform;
         }
 
         .animate-scroll:hover {
