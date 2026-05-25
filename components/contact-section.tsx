@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { MapPin, Phone, Mail, Send } from 'lucide-react'
+import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react'
 
 /**
  * Contact Section Component - Formulario de contacto y cotización
@@ -42,68 +42,75 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="bg-[#F5F5F7] py-10" aria-labelledby="contact-heading">
+    <section id="contacto" className="bg-white py-16" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <header className="text-center mb-16">
-          <p className="text-[#D7B63A] font-semibold text-sm uppercase tracking-wider mb-2">
-            CONTÁCTANOS
-          </p>
-          <h2 id="contact-heading" className="font-serif text-4xl md:text-5xl font-bold text-balance">
-            Solicita tu <span className="text-[#D7B63A]">Cotización</span>
-          </h2>
-          <p className="text-[#1A1A1A]/70 mt-4 max-w-2xl mx-auto">
-            Cuéntanos sobre tu proyecto y te enviaremos una propuesta personalizada en 
-            menos de 24 horas.
-          </p>
-        </header>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
-          {/* Left Column - Contact Information */}
-          <address className="lg:col-span-2 space-y-8 not-italic">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left Column - Business Information */}
+          <address className="not-italic space-y-8">
+            {/* Company Header */}
             <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#D7B63A] rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                  <MapPin className="w-6 h-6 text-[#1A1A1A]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Ubicación</h3>
-                  <p className="text-[#1A1A1A]/70">
-                    Calle 20 #3-22 <br />
-                    Cali, Valle del Cauca<br />
-                    Colombia
-                  </p>
-                </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#1A1A1A] mb-2">
+                DiplomArt
+              </h2>
+              <p className="text-[#1A1A1A]/70 text-base">
+                Más de 25 años creando diplomas, agendas y merchandising de alta calidad
+              </p>
+            </div>
+
+            {/* Address Block */}
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-[#D7B63A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-[#D7B63A]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-[#1A1A1A] mb-1">Dirección</h3>
+                <p className="text-[#1A1A1A]/70 text-sm leading-relaxed">
+                  Calle 20 #3-22<br />
+                  Cali, Valle del Cauca 760001<br />
+                  Colombia
+                </p>
               </div>
             </div>
 
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#D7B63A] rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                  <Phone className="w-6 h-6 text-[#1A1A1A]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Teléfono</h3>
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getDefaultMessage(formData.name, formData.product))}`} target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 318 483 6892</a>
-                </div>
+            {/* Phone Block */}
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-[#D7B63A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-[#D7B63A]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-[#1A1A1A] mb-1">Teléfono</h3>
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getDefaultMessage(formData.name, formData.product))}`} target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors text-sm">+57 318 483 6892</a>
               </div>
             </div>
 
-            <div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#D7B63A] rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                  <Mail className="w-6 h-6 text-[#1A1A1A]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-1">Email</h3>
-                  <a href="mailto:info@diplomart.com.co" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">info@diplomart.com.co</a>
+            {/* Email Block */}
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-[#D7B63A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Mail className="w-6 h-6 text-[#D7B63A]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-[#1A1A1A] mb-1">Correo Electrónico</h3>
+                <a href="mailto:info@diplomart.com.co" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors text-sm">info@diplomart.com.co</a>
+              </div>
+            </div>
+
+            {/* Hours Block */}
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-[#D7B63A]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Clock className="w-6 h-6 text-[#D7B63A]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-[#1A1A1A] mb-1">Horarios de Atención</h3>
+                <div className="text-[#1A1A1A]/70 text-sm space-y-1">
+                  <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                  <p>Sábado: 9:00 AM - 2:00 PM</p>
                 </div>
               </div>
             </div>
           </address>
 
           {/* Right Column - Contact Form */}
-          <aside className="lg:col-span-3" aria-label="Formulario de contacto">
+          <aside aria-label="Formulario de contacto">
             <form onSubmit={handleSubmit} className="bg-[#D7B63A] p-8 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Nombre completo */}
