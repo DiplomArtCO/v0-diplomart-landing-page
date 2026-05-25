@@ -5,6 +5,7 @@ import React from "react"
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
 
@@ -17,14 +18,21 @@ import { MapPin, Phone, Mail, Send } from 'lucide-react'
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
-    product: ''
+    product: '',
+    mensaje: ''
   })
 
-  const WHATSAPP_LINK = 'https://wa.me/' // Same as WhatsApp button
+  const WHATSAPP_NUMBER = '+573184836892'
+  const DEFAULT_MESSAGE = 'Hola, solicito información sobre sus servicios'
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    window.open(WHATSAPP_LINK, '_blank')
+    
+    const messageText = formData.mensaje.trim() || DEFAULT_MESSAGE
+    const encodedMessage = encodeURIComponent(messageText)
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -122,6 +130,20 @@ export default function ContactSection() {
                       <SelectItem value="otros">Otros</SelectItem>
                     </SelectContent>
                   </Select>
+                </div>
+
+                {/* Mensaje */}
+                <div className="md:col-span-2">
+                  <label htmlFor="mensaje" className="block text-[#1A1A1A] font-semibold mb-2">
+                    Mensaje
+                  </label>
+                  <Textarea
+                    id="mensaje"
+                    placeholder="Cuéntanos sobre tu proyecto, cantidad aproximada, fechas... (opcional)"
+                    value={formData.mensaje}
+                    onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                    className="bg-white border-[#D7B63A]/30 min-h-[120px]"
+                  />
                 </div>
               </div>
 
