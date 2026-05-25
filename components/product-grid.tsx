@@ -4,17 +4,18 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import ImageCarousel from './image-carousel'
 
 /**
- * Product Grid Component - Grid 2x2 de productos principales
+ * Product Carousel Component - Carousel 1x3 de productos
  * Cada tarjeta tiene:
  * - Imagen del producto
  * - Título y descripción
  * - Características (badges)
  * - Hover effect: zoom en imagen, título cambia a amarillo, botón circular aparece
  * - Click abre modal con carrusel de imágenes y detalles adicionales
+ * - Carrusel horizontal con flechas y puntos de navegación
  */
 
 interface Product {
@@ -88,6 +89,27 @@ const products: Product[] = [
 export default function ProductGrid() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  // Items per page based on screen size
+  const itemsPerPage = 3
+  const totalPages = Math.ceil(products.length / itemsPerPage)
+  
+  const goToPrevious = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalPages - 1 : prev - 1))
+  }
+  
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev === totalPages - 1 ? 0 : prev + 1))
+  }
+  
+  const goToPage = (page: number) => {
+    setCurrentSlide(page)
+  }
+  
+  // Get visible products for current slide
+  const startIdx = currentSlide * itemsPerPage
+  const visibleProducts = products.slice(startIdx, startIdx + itemsPerPage)
 
   return (
     <section id="productos" className="bg-white py-4">
@@ -106,72 +128,115 @@ export default function ProductGrid() {
           </p>
         </div>
 
-        {/* Product Grid - 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-4">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="group relative border-2 border-[#D7B63A] rounded-lg overflow-hidden bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl"
-              onMouseEnter={() => setHoveredId(product.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              onClick={() => setSelectedProduct(product)}
-            >
-              {/* Product Image */}
-              <div className="aspect-[4/3] overflow-hidden bg-[#F5F5F7]">
-                <Image
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  priority={false}
-                />
-              </div>
-
-              {/* Product Content */}
-              <div className="p-3">
-                {/* Title */}
-                <h3 
-                  className={`font-serif text-lg md:text-xl font-bold mb-1 transition-colors duration-300 ${
-                    hoveredId === product.id ? 'text-[#D7B63A]' : 'text-[#1A1A1A]'
-                  }`}
+        {/* Product Carousel */}
+        <div className="max-w-6xl mx-auto">
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Products Grid - Always 3 columns, fills with visible products */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {visibleProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="group relative border-2 border-[#D7B63A] rounded-lg overflow-hidden bg-white cursor-pointer transition-all duration-300 hover:shadow-2xl"
+                  onMouseEnter={() => setHoveredId(product.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onClick={() => setSelectedProduct(product)}
                 >
-                  {product.title}
-                </h3>
+                  {/* Product Image */}
+                  <div className="aspect-[4/3] overflow-hidden bg-[#F5F5F7]">
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.title}
+                      width={400}
+                      height={300}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      priority={false}
+                    />
+                  </div>
 
-                {/* Description */}
-                <p className="text-[#1A1A1A]/70 mb-2 leading-tight text-sm">
-                  {product.description}
-                </p>
-
-                {/* Characteristics Badges */}
-                <div className="flex flex-wrap gap-1">
-                  {product.characteristics.slice(0, 3).map((char) => (
-                    <Badge 
-                      key={char} 
-                      variant="secondary"
-                      className="bg-[#D7B63A]/10 text-[#1A1A1A] border-[#D7B63A]/20 text-xs"
+                  {/* Product Content */}
+                  <div className="p-3">
+                    {/* Title */}
+                    <h3 
+                      className={`font-serif text-lg md:text-xl font-bold mb-1 transition-colors duration-300 ${
+                        hoveredId === product.id ? 'text-[#D7B63A]' : 'text-[#1A1A1A]'
+                      }`}
                     >
-                      {char}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+                      {product.title}
+                    </h3>
 
-              {/* Hover Arrow Button */}
-              <div 
-                className={`absolute bottom-3 right-3 transition-all duration-300 ${
-                  hoveredId === product.id 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 translate-x-4'
-                }`}
-              >
-                <div className="w-10 h-10 rounded-full bg-[#D7B63A] flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-5 h-5 text-[#1A1A1A]" />
+                    {/* Description */}
+                    <p className="text-[#1A1A1A]/70 mb-2 leading-tight text-sm">
+                      {product.description}
+                    </p>
+
+                    {/* Characteristics Badges */}
+                    <div className="flex flex-wrap gap-1">
+                      {product.characteristics.slice(0, 3).map((char) => (
+                        <Badge 
+                          key={char} 
+                          variant="secondary"
+                          className="bg-[#D7B63A]/10 text-[#1A1A1A] border-[#D7B63A]/20 text-xs"
+                        >
+                          {char}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hover Arrow Button */}
+                  <div 
+                    className={`absolute bottom-3 right-3 transition-all duration-300 ${
+                      hoveredId === product.id 
+                        ? 'opacity-100 translate-x-0' 
+                        : 'opacity-0 translate-x-4'
+                    }`}
+                  >
+                    <div className="w-10 h-10 rounded-full bg-[#D7B63A] flex items-center justify-center shadow-lg">
+                      <ArrowRight className="w-5 h-5 text-[#1A1A1A]" />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+
+            {/* Left Arrow - Visible on desktop */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-14 z-20 bg-[#D7B63A] hover:bg-[#D7B63A]/90 text-[#1A1A1A] p-2 rounded-full transition-colors duration-300 hidden md:flex items-center justify-center w-10 h-10"
+              aria-label="Previous products"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Right Arrow - Visible on desktop */}
+            <button
+              onClick={goToNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-14 z-20 bg-[#D7B63A] hover:bg-[#D7B63A]/90 text-[#1A1A1A] p-2 rounded-full transition-colors duration-300 hidden md:flex items-center justify-center w-10 h-10"
+              aria-label="Next products"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Pagination Dots */}
+          {totalPages > 1 && (
+            <div className="flex justify-center gap-2 mt-6">
+              {Array.from({ length: totalPages }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goToPage(idx)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    idx === currentSlide
+                      ? 'bg-[#D7B63A] w-6'
+                      : 'bg-[#D7B63A]/30 hover:bg-[#D7B63A]/60'
+                  }`}
+                  aria-label={`Go to page ${idx + 1}`}
+                  aria-current={idx === currentSlide ? 'true' : 'false'}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
