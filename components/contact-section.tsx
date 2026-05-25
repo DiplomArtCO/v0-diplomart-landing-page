@@ -44,7 +44,7 @@ export default function ContactSection() {
   return (
     <section id="contacto" className="bg-white py-16" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {/* Left Column - Business Information */}
           <address className="not-italic space-y-8">
             {/* Company Header */}
@@ -104,12 +104,13 @@ export default function ContactSection() {
                 <div className="text-[#1A1A1A]/70 text-sm space-y-1">
                   <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
                   <p>Sábado: 9:00 AM - 2:00 PM</p>
+                  <p>7:00 am a 6 pm de lunes a sabado</p>
                 </div>
               </div>
             </div>
           </address>
 
-          {/* Right Column - Contact Form */}
+          {/* Middle Column - Contact Form */}
           <aside aria-label="Formulario de contacto">
             <form onSubmit={handleSubmit} className="bg-[#D7B63A] p-8 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -171,6 +172,20 @@ export default function ContactSection() {
                 Enviar Mensaje
               </Button>
             </form>
+          </aside>
+
+          {/* Right Column - Google Maps */}
+          <aside aria-label="Mapa de ubicación">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.8235123456789!2d-76.5225!3d3.4372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0a0a0a0a0a1%3A0x1234567890abcdef!2sCalle%2020%20%233-22%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0, borderRadius: '0.5rem' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg shadow-lg"
+            ></iframe>
           </aside>
         </div>
       </div>
