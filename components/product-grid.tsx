@@ -90,10 +90,10 @@ export default function ProductGrid() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section id="productos" className="bg-white py-10">
+    <section id="productos" className="bg-white py-8">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <p className="text-[#D7B63A] font-semibold text-sm uppercase tracking-wider mb-2">
             NUESTROS PRODUCTOS
           </p>
@@ -107,7 +107,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Grid - 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-6">
           {products.map((product) => (
             <div
               key={product.id}
@@ -129,10 +129,10 @@ export default function ProductGrid() {
               </div>
 
               {/* Product Content */}
-              <div className="p-6">
+              <div className="p-5">
                 {/* Title */}
                 <h3 
-                  className={`font-serif text-2xl font-bold mb-3 transition-colors duration-300 ${
+                  className={`font-serif text-2xl font-bold mb-2 transition-colors duration-300 ${
                     hoveredId === product.id ? 'text-[#D7B63A]' : 'text-[#1A1A1A]'
                   }`}
                 >
@@ -140,7 +140,7 @@ export default function ProductGrid() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#1A1A1A]/70 mb-4 leading-relaxed">
+                <p className="text-[#1A1A1A]/70 mb-3 leading-relaxed">
                   {product.description}
                 </p>
 
@@ -160,7 +160,7 @@ export default function ProductGrid() {
 
               {/* Hover Arrow Button */}
               <div 
-                className={`absolute bottom-6 right-6 transition-all duration-300 ${
+                className={`absolute bottom-5 right-5 transition-all duration-300 ${
                   hoveredId === product.id 
                     ? 'opacity-100 translate-x-0' 
                     : 'opacity-0 translate-x-4'
