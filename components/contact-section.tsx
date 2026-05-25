@@ -5,7 +5,6 @@ import React from "react"
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
 
@@ -18,37 +17,14 @@ import { MapPin, Phone, Mail, Send } from 'lucide-react'
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
-    company: '',
-    product: '',
-    message: ''
+    product: ''
   })
+
+  const WHATSAPP_LINK = 'https://wa.me/' // Same as WhatsApp button
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
-    // Generar mensaje para WhatsApp
-    const whatsappMessage = `
-*Nueva Solicitud de Cotización*
-
-*Nombre:* ${formData.name}
-*Email:* ${formData.email}
-*Teléfono:* ${formData.phone}
-*Empresa/Institución:* ${formData.company}
-*Producto de Interés:* ${formData.product}
-
-*Mensaje:*
-${formData.message}
-    `.trim()
-
-    // WhatsApp number (replace with actual number)
-    const phoneNumber = '573157292101' // Format: country code + number without +
-    const encodedMessage = encodeURIComponent(whatsappMessage)
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    
-    // Abrir WhatsApp en nueva ventana
-    window.open(whatsappUrl, '_blank')
+    window.open(WHATSAPP_LINK, '_blank')
   }
 
   return (
@@ -129,51 +105,8 @@ ${formData.message}
                   />
                 </div>
 
-                {/* Email */}
-                <div>
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
-                    Email <span className="text-red-600">*</span>
-                  </label>
-                  <Input
-                    required
-                    type="email"
-                    placeholder="tu@email.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-white border-[#D7B63A]/30"
-                  />
-                </div>
-
-                {/* Teléfono */}
-                <div>
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
-                    Teléfono <span className="text-red-600">*</span>
-                  </label>
-                  <Input
-                    required
-                    type="tel"
-                    placeholder="+57 300 000 0000"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="bg-white border-[#D7B63A]/30"
-                  />
-                </div>
-
-                {/* Empresa / Institución */}
-                <div>
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
-                    Empresa / Institución
-                  </label>
-                  <Input
-                    placeholder="Nombre de tu empresa"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="bg-white border-[#D7B63A]/30"
-                  />
-                </div>
-
                 {/* Producto de interés */}
-                <div>
+                <div className="md:col-span-2">
                   <label className="block text-[#1A1A1A] font-semibold mb-2">
                     Producto de interés <span className="text-red-600">*</span>
                   </label>
@@ -189,20 +122,6 @@ ${formData.message}
                       <SelectItem value="otros">Otros</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
-
-                {/* Mensaje */}
-                <div className="md:col-span-2">
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
-                    Mensaje <span className="text-red-600">*</span>
-                  </label>
-                  <Textarea
-                    required
-                    placeholder="Cuéntanos sobre tu proyecto, cantidad aproximada, fechas..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-white border-[#D7B63A]/30 min-h-[120px]"
-                  />
                 </div>
               </div>
 
