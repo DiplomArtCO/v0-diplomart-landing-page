@@ -4,6 +4,7 @@ import ProductGrid from '@/components/product-grid'
 import ClientsCarousel from '@/components/clients-carousel'
 import AboutSection from '@/components/about-section'
 import ContactSection from '@/components/contact-section'
+import BusinessLocation from '@/components/business-location'
 import Footer from '@/components/footer'
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
         
         {/* Contact Section - Formulario de contacto y WhatsApp */}
         <ContactSection />
+
+        {/* Business Location - Información de ubicación y mapa */}
+        <BusinessLocation />
       </main>
       
       {/* Footer - Información de la empresa y enlaces */}
