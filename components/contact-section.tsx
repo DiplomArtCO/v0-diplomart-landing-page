@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { MapPin, Phone, Mail, Send } from 'lucide-react'
+import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react'
 
 /**
  * Contact Section Component - Formulario de contacto y cotización
@@ -100,10 +100,24 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
+
+            <div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#D7B63A] rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <Clock className="w-6 h-6 text-[#1A1A1A]" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1">Horarios</h3>
+                  <p className="text-[#1A1A1A]/70">
+                    7:00 am a 6 pm de lunes a sabado
+                  </p>
+                </div>
+              </div>
+            </div>
           </address>
 
-          {/* Right Column - Contact Form */}
-          <aside className="lg:col-span-3" aria-label="Formulario de contacto">
+          {/* Middle Column - Contact Form */}
+          <aside className="lg:col-span-2" aria-label="Formulario de contacto">
             <form onSubmit={handleSubmit} className="bg-[#D7B63A] p-8 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Nombre completo */}
@@ -164,6 +178,20 @@ export default function ContactSection() {
                 Enviar Mensaje
               </Button>
             </form>
+          </aside>
+
+          {/* Right Column - Google Maps */}
+          <aside className="lg:col-span-1" aria-label="Mapa de ubicación">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.823506558!2d-76.522529!3d3.437266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0a0a0a0a0a1%3A0x1234567890abcdef!2sCalle%2020%20%233-22%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890"
+              width="100%"
+              height="350"
+              style={{ border: 0, borderRadius: '0.5rem' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg shadow-lg"
+            ></iframe>
           </aside>
         </div>
       </div>
