@@ -89,27 +89,27 @@ const products: Product[] = [
 export default function ProductGrid() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
   
-  // Items per page based on screen size
-  const itemsPerPage = 3
-  const totalPages = Math.ceil(products.length / itemsPerPage)
+  // Show 3 items at a time
+  const itemsVisible = 3
+  // Total number of slides (groups of 3 items)
+  const totalSlides = Math.max(1, products.length - itemsVisible + 1)
   
   const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalPages - 1 : prev - 1))
+    setCurrentIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
   }
   
   const goToNext = () => {
-    setCurrentSlide((prev) => (prev === totalPages - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
   }
   
-  const goToPage = (page: number) => {
-    setCurrentSlide(page)
+  const goToSlide = (slideIdx: number) => {
+    setCurrentIndex(slideIdx)
   }
   
-  // Get visible products for current slide
-  const startIdx = currentSlide * itemsPerPage
-  const visibleProducts = products.slice(startIdx, startIdx + itemsPerPage)
+  // Get visible products for current index - always show 3 consecutive items
+  const visibleProducts = products.slice(currentIndex, currentIndex + itemsVisible)
 
   return (
     <section id="productos" className="bg-white py-4">
@@ -219,20 +219,20 @@ export default function ProductGrid() {
             </button>
           </div>
 
-          {/* Pagination Dots */}
-          {totalPages > 1 && (
-            <div className="flex justify-center gap-2 mt-6">
-              {Array.from({ length: totalPages }).map((_, idx) => (
+          {/* Pagination Dots - Improved visibility */}
+          {totalSlides > 1 && (
+            <div className="flex justify-center gap-3 mt-8">
+              {Array.from({ length: totalSlides }).map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => goToPage(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    idx === currentSlide
-                      ? 'bg-[#D7B63A] w-6'
-                      : 'bg-[#D7B63A]/30 hover:bg-[#D7B63A]/60'
+                  onClick={() => goToSlide(idx)}
+                  className={`rounded-full transition-all duration-300 ${
+                    idx === currentIndex
+                      ? 'bg-[#D7B63A] w-4 h-4 shadow-md'
+                      : 'bg-[#D7B63A]/40 w-3 h-3 hover:bg-[#D7B63A]/70'
                   }`}
-                  aria-label={`Go to page ${idx + 1}`}
-                  aria-current={idx === currentSlide ? 'true' : 'false'}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-current={idx === currentIndex ? 'true' : 'false'}
                 />
               ))}
             </div>
