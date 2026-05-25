@@ -90,24 +90,24 @@ export default function ProductGrid() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section id="productos" className="bg-white py-8">
+    <section id="productos" className="bg-white py-4">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-[#D7B63A] font-semibold text-sm uppercase tracking-wider mb-2">
+        <div className="text-center mb-6">
+          <p className="text-[#D7B63A] font-semibold text-xs uppercase tracking-wider mb-1">
             NUESTROS PRODUCTOS
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-balance">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-balance">
             Productos y <span className="text-[#D7B63A]">Servicios</span>
           </h2>
-          <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto text-pretty mt-4">
+          <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto text-pretty mt-2 text-sm md:text-base">
             Cada pieza que creamos refleja la excelencia y el compromiso con la calidad que nos 
             caracteriza desde hace más de 25 años.
           </p>
         </div>
 
         {/* Product Grid - 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-4">
           {products.map((product) => (
             <div
               key={product.id}
@@ -129,10 +129,10 @@ export default function ProductGrid() {
               </div>
 
               {/* Product Content */}
-              <div className="p-5">
+              <div className="p-3">
                 {/* Title */}
                 <h3 
-                  className={`font-serif text-2xl font-bold mb-2 transition-colors duration-300 ${
+                  className={`font-serif text-lg md:text-xl font-bold mb-1 transition-colors duration-300 ${
                     hoveredId === product.id ? 'text-[#D7B63A]' : 'text-[#1A1A1A]'
                   }`}
                 >
@@ -140,17 +140,17 @@ export default function ProductGrid() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#1A1A1A]/70 mb-3 leading-relaxed">
+                <p className="text-[#1A1A1A]/70 mb-2 leading-tight text-sm">
                   {product.description}
                 </p>
 
                 {/* Characteristics Badges */}
-                <div className="flex flex-wrap gap-2">
-                  {product.characteristics.map((char) => (
+                <div className="flex flex-wrap gap-1">
+                  {product.characteristics.slice(0, 3).map((char) => (
                     <Badge 
                       key={char} 
                       variant="secondary"
-                      className="bg-[#D7B63A]/10 text-[#1A1A1A] border-[#D7B63A]/20"
+                      className="bg-[#D7B63A]/10 text-[#1A1A1A] border-[#D7B63A]/20 text-xs"
                     >
                       {char}
                     </Badge>
@@ -160,14 +160,14 @@ export default function ProductGrid() {
 
               {/* Hover Arrow Button */}
               <div 
-                className={`absolute bottom-5 right-5 transition-all duration-300 ${
+                className={`absolute bottom-3 right-3 transition-all duration-300 ${
                   hoveredId === product.id 
                     ? 'opacity-100 translate-x-0' 
                     : 'opacity-0 translate-x-4'
                 }`}
               >
-                <div className="w-12 h-12 rounded-full bg-[#D7B63A] flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-6 h-6 text-[#1A1A1A]" />
+                <div className="w-10 h-10 rounded-full bg-[#D7B63A] flex items-center justify-center shadow-lg">
+                  <ArrowRight className="w-5 h-5 text-[#1A1A1A]" />
                 </div>
               </div>
             </div>
