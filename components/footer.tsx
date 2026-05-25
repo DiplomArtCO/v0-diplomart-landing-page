@@ -86,7 +86,7 @@ export default function Footer() {
           <aside>
             <h3 className="font-bold text-[#1A1A1A] mb-4">Contacto</h3>
             <address className="space-y-2 text-sm text-[#1A1A1A]/70 mb-6 not-italic">
-              <p><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#D7B63A] transition-colors">+57 315 729 2101</a></p>
+              <p><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#D7B63A] transition-colors">+57 318 483 6892</a></p>
               <p><a href="mailto:info@diplomart.com.co" className="hover:text-[#D7B63A] transition-colors">info@diplomart.com.co</a></p>
               <p>Cali, Valle del Cauca, Colombia</p>
             </address>
