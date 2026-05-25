@@ -109,7 +109,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-bold text-lg mb-1">Horarios</h3>
                   <p className="text-[#1A1A1A]/70">
-                    7:00 am a 6 pm de lunes a sabado
+                    7:00 AM - 6:00 PM de Lunes a Sábado
                   </p>
                 </div>
               </div>
