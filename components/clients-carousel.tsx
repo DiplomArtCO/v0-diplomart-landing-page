@@ -10,11 +10,15 @@ import Image from 'next/image'
  */
 
 const clientLogos = [
-  { src: '/logo-sidoc.png', alt: 'Fundación SIDOC', url: 'https://fundacionsidoc.org' },
-  { src: '/logo-sc.png', alt: 'Institucion Educativa Santa Cecilia Cali', url: '#' },
-  { src: '/logo-clan.png', alt: 'Colegio Los Ángeles del Norte Cali', url: '#' },
-  { src: '/logo-anglo-americano.png', alt: 'Colegio Anglo Americano Cali', url: 'https://www.colegioangloamericano.edu.co' },
-  { src: '/logo-consac.png', alt: 'Colegio Nuestra Señora de la Anunciacion Cali', url: '#' },
+  { src: '/logo-sidoc.webp', alt: 'Fundación SIDOC', url: 'https://fundacionsidoc.org' },
+  { src: '/logo-sc.webp', alt: 'Institucion Educativa Santa Cecilia Cali', url: '#' },
+  { src: '/logo-clan.webp', alt: 'Colegio Los Ángeles del Norte Cali', url: '#' },
+  { src: '/logo-anglo-americano.webp', alt: 'Colegio Anglo Americano Cali', url: 'https://www.colegioangloamericano.edu.co' },
+  { src: '/logo-consac.webp', alt: 'Colegio Nuestra Señora de la Anunciacion Cali', url: '#' },
+  { src: '/logo-sam.webp', alt: 'Clínica Liderazgo SAM San Ambrosio de Milán Cali', url: '#' },
+  { src: '/logo-dempresa.webp', alt: 'DEMPRESA', url: '#' },
+  { src: '/logo-ces.webp', alt: 'Colegio CES Cali', url: '#' },
+  { src: '/logo-moderno-decepaz.webp', alt: 'Instituto Moderno de Paz Cali', url: '#' },
 ]
 
 // Duplicate logos multiple times for seamless infinite carousel

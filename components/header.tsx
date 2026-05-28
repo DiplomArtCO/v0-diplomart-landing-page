@@ -48,7 +48,7 @@ export default function Header() {
             aria-label="Volver al inicio"
           >
             <Image 
-              src="/images/design-mode/Logo%20Texto%20Negro.png" 
+              src="/logo_texto.webp" 
               alt="DiplomArt Diplomas para Graduacion Cali" 
               width={50} 
               height={50}
