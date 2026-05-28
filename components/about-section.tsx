@@ -67,7 +67,7 @@ export default function AboutSection() {
           </article>
 
           {/* Right Column - Feature Cards (2x2 Grid) */}
-          <aside className="grid grid-cols-1 sm:grid-cols-2 gap-6" aria-label="Características destacadas">
+          <aside className="grid grid-cols-2 gap-4 sm:gap-6" aria-label="Características destacadas">
             {features.map((feature) => {
               const Icon = feature.icon
               return (
