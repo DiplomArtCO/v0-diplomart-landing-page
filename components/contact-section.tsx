@@ -118,8 +118,8 @@ export default function ContactSection() {
 
           {/* Middle Column - Contact Form */}
           <aside className="lg:col-span-2" aria-label="Formulario de contacto">
-            <form onSubmit={handleSubmit} className="bg-[#D7B63A] pt-6 pb-7.5 px-7.875 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="bg-[#D7B63A] pt-6 pb-7.5 px-4.5 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-3.75">
                 {/* Nombre completo */}
                 <div className="md:col-span-2">
                   <label className="block text-[#1A1A1A] font-semibold mb-2">
@@ -181,7 +181,7 @@ export default function ContactSection() {
           </aside>
 
           {/* Right Column - Google Maps */}
-          <aside className="lg:col-span-1" aria-label="Mapa de ubicación">
+          <aside className="lg:col-span-1 leading-[2.5em]" aria-label="Mapa de ubicación">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.823506558!2d-76.522529!3d3.437266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0a0a0a0a0a1%3A0x1234567890abcdef!2sCalle%2020%20%233-22%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890"
               width="100%"

@@ -127,7 +127,7 @@ export default function Footer() {
 
       {/* Bottom Bar - Copyright */}
       <div className="border-t border-[#D7B63A]/20">
-        <div className="container mx-auto px-4 py-2.25">
+        <div className="container mx-auto px-4 pt-2.25 pb-2.5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#1A1A1A]/60">
             <p>© 2026 Diplomart. Todos los derechos reservados.</p>
             <p className="flex items-center gap-2">
