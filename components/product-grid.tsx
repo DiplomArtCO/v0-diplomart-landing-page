@@ -35,9 +35,7 @@ const products: Product[] = [
     description: 'Paquete de Diploma y Acta para Instituciones Educativas.',
     image: '/kit-diploma-carpeta-acta.png',
     images: [
-      { src: '/kit-diploma-carpeta-acta.png', alt: 'Kit completo diploma carpeta acta con presentación premium Cali' },
-      { src: '/kit-diploma-carpeta-acta.png', alt: 'Diploma personalizado con acta y carpeta portadiploma Cali' },
-      { src: '/kit-diploma-carpeta-acta.png', alt: 'Paquete de graduación con materiales de lujo Cali' },
+      { src: '/kit-diploma-carpeta-act.webp', alt: 'Kit completo diploma carpeta acta con presentación premium Cali' },
     ],
     characteristics: ['Papel Importado', 'Tinta UV de Seguridad', 'Diseño Personalizado', 'Acabados Premium', 'Escudo Repujado'],
     details: 'Paquete de Diplomas, Actas y Carpetas portadiploma de graduación elaborados con altos estándares de calidad. Papel importado de alto gramaje, impresion litográfica de seguridad UV con filigrana de seguridad. Diseños modernos y personalizados que reflejan la identidad de tu institución.'
@@ -49,11 +47,11 @@ const products: Product[] = [
     image: '/agendas-argollada-personalizada.png',
     images: [
       { src: '/agendas-argollada-personalizada.png', alt: 'Agenda argollada personalizada con encuadernación en pasta dura Cali' },
-      { src: '/cuaderno-argollado-personalizado.png', alt: 'Cuaderno argollado con diseño personalizado Cali' },
-      { src: '/agenda-corporativa-personalizada.png', alt: 'Agenda corporativa cosida con diseño personalizado Cali' },
-      { src: '/cuaderno-corporativo-personalizado.jpeg', alt: 'Cuaderno empresarial personalizado argollado Cali' },
-      { src: '/agenda-cosida-personalizada.png', alt: 'Agenda tapa blanda personalizada Cali' },
-      { src: '/agenda-pasta-dura.jpg', alt: 'Cuaderno personalizado pasta dura argollado Cali' },
+      { src: '/cuaderno-argollado-personalizado.webp', alt: 'Cuaderno argollado con diseño personalizado Cali' },
+      { src: '/agenda-corporativa-personalizada.webp', alt: 'Agenda corporativa cosida con diseño personalizado Cali' },
+      { src: '/cuaderno-corporativo-personalizado.webp', alt: 'Cuaderno empresarial personalizado argollado Cali' },
+      { src: '/agenda-cosida-personalizada.webp', alt: 'Agenda tapa blanda personalizada Cali' },
+      { src: '/agenda-pasta-dura.webp', alt: 'Cuaderno personalizado pasta dura argollado Cali' },
     ],
     characteristics: ['Personalización completa', 'Empastado rigido y/o blando', 'Anillado, Cosido, Hotmail', 'Insertos Full Color'],
     details: 'Agendas ejecutivas y corporativas con acabados premium. Fabricadas con materiales de alta calidad, incluye personalización completa del diseño interior y exterior. Disponibles con múltiples opciones de encuadernación: argollada, cosida y empastada. Diseños personalizados para reflejar tu identidad corporativa.'
@@ -64,9 +62,9 @@ const products: Product[] = [
     description: 'Bolsas ecológicas personalizadas con tu marca. Ideales para eventos, conferencias y promociones.',
     image: '/totebag-estampado.jpeg',
     images: [
-      { src: '/totebag-estampado.jpeg', alt: 'Totebag blanco con diseño personzaliado estampado' },
-      { src: '/totebag-personalizado.jpeg', alt: 'Bolsa ecológica de algodón con imagen estampada' },
-      { src: '/bolsa-ecologica-personalizada.jpg', alt: 'Tote bag ecológica resistente personalizada' },
+      { src: '/totebag-estampado.webp', alt: 'Totebag blanco con diseño personzaliado estampado' },
+      { src: '/totebag-personalizado.webp', alt: 'Bolsa ecológica de algodón con imagen estampada' },
+      { src: '/bolsa-ecologica-personalizada.webp', alt: 'Tote bag ecológica resistente personalizada' },
     ],
     characteristics: ['100% Algodón', 'Serigrafía', 'Eco-Friendly', 'Resistente', 'Personalización Completa'],
     details: 'Totebags ecológicos 100% algodón, personalizados con serigrafía de alta calidad. Perfectos para eventos corporativos, conferencias y como merchandising institucional. Material resistente y amigable con el medio ambiente. Disponibles en múltiples diseños y con opciones de personalización total para tu marca.'
@@ -77,9 +75,9 @@ const products: Product[] = [
     description: 'Artículos promocionales de alta calidad: tazas, bolígrafos, llaveros y más con tu identidad corporativa.',
     image: '/merchandising-empresarial-cali.png',
     images: [
-      { src: '/merchandising-empresarial-cali.png', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
-      { src: '/merchandising-empresarial-cali.png', alt: 'Kit corporativo personalizado con mugs y artículos promocionales' },
-      { src: '/merchandising-empresarial-cali.png', alt: 'Material POP personalizado' },
+      { src: '/merchandising-empresarial-cali.webp', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
+      { src: '/merchandising-empresarial-cali.webp', alt: 'Kit corporativo personalizado con mugs y artículos promocionales' },
+      { src: '/merchandising-empresarial-cali.webp', alt: 'Material POP personalizado' },
     ],
     characteristics: ['Catálogo Amplio', 'Calidad Premium', 'Branding Completo', 'Personalización'],
     details: 'Línea completa de merchandising corporativo: tazas de cerámica, bolígrafos premium, libretas, llaveros metálicos, totebags y mucho más. Todos con opciones de personalización y branding completo para tu empresa. Cada artículo está diseñado para reflejar la identidad y valores de tu marca en cada detalle.'
