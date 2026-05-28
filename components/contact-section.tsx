@@ -42,10 +42,10 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="bg-[#F5F5F7] py-10" aria-labelledby="contact-heading">
+    <section id="contacto" className="bg-[#F5F5F7] pb-6.5" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <header className="text-center mb-16">
+        <header className="text-center mb-9.5">
           <p className="text-[#D7B63A] font-semibold text-sm uppercase tracking-wider mb-2">
             CONTÁCTANOS
           </p>
@@ -118,7 +118,7 @@ export default function ContactSection() {
 
           {/* Middle Column - Contact Form */}
           <aside className="lg:col-span-2" aria-label="Formulario de contacto">
-            <form onSubmit={handleSubmit} className="bg-[#D7B63A] p-8 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
+            <form onSubmit={handleSubmit} className="bg-[#D7B63A] pt-6 pb-7.5 px-7.875 rounded-lg shadow-xl border-2 border-[#D7B63A]/30">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Nombre completo */}
                 <div className="md:col-span-2">
