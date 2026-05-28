@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Column 1 - Company Bio */}
           <article>
             <Image 
-              src="/images/design-mode/Logo%20Texto%20Negro.png" 
+              src="/logo_texto.webp" 
               alt="DiplomArt Diplomas para Graduacion Cali" 
               width={150} 
               height={50}
