@@ -27,22 +27,22 @@ export default function Hero() {
       <div className="container relative z-10 px-0 mx-40">
         <div className="max-w-6xl mx-auto">
           {/* Image and Text Layout - Side by side */}
-          <article className="flex flex-col lg:flex-row items-center lg:gap-0 ml-0 mr-0 mb-8 mt-4">
-            {/* Hand Image - Left */}
+          <article className="flex flex-col lg:flex-row items-center lg:gap-8 ml-0 mr-0 mb-8 mt-4">
+            {/* Hand Image - Left (50% smaller) */}
             <figure className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <Image 
                 src="/mano-negra.png" 
                 alt="Mano Negra sosteniendo diploma - Simbolo de El Esfuerzo Hecho Arte" 
-                width={300} 
-                height={400}
-                className="object-contain leading-10 size-64"
+                width={150} 
+                height={200}
+                className="object-contain leading-10 size-32"
               />
             </figure>
 
             {/* Description - Right, aligned to right */}
             <div className="flex-1 text-center lg:text-right">
               <p className="text-base md:text-lg text-[#1A1A1A]/70 leading-relaxed text-pretty">
-                Líderes en soluciones gráficas integrales para instituciones y corporaciones. Nuestra oferta incluye paquetes completos de graduación: <strong>Diplomas, Actas y Carpetas</strong>; y productos de <strong>branding/merchandising</strong> para posicionar TU marca. Trayectoria de +25 años garantizando distinción, calidad y cumplimiento.
+                Líderes en <span className="font-bold text-[#1A1A1A]">soluciones gráficas integrales</span> para instituciones y corporaciones. Nuestra oferta incluye paquetes completos de graduación: <span className="font-bold text-[#D7B63A]">Diplomas, Actas y Carpetas</span>; y productos de <span className="font-bold text-[#D7B63A]">branding/merchandising</span> para posicionar TU marca. Trayectoria de <span className="font-bold text-[#1A1A1A]">+25 años</span> garantizando distinción, calidad y cumplimiento.
               </p>
             </div>
           </article>
