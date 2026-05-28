@@ -67,21 +67,21 @@ export default function AboutSection() {
           </article>
 
           {/* Right Column - Feature Cards (2x2 Grid) */}
-          <aside className="grid grid-cols-1 sm:grid-cols-2 gap-6" aria-label="Características destacadas">
+          <aside className="grid grid-cols-2 gap-4 sm:gap-6" aria-label="Características destacadas">
             {features.map((feature) => {
               const Icon = feature.icon
               return (
                 <article
                   key={feature.title}
-                  className="bg-[#D7B63A] p-6 rounded-lg border-2 border-[#D7B63A]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="bg-[#D7B63A] p-4 sm:p-6 rounded-lg border-2 border-[#D7B63A]/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-12 h-12 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
+                  <div className="w-12 h-12 bg-[#1A1A1A] rounded-lg flex items-center justify-center mb-3 sm:mb-4" aria-hidden="true">
                     <Icon className="w-6 h-6 text-[#D7B63A]" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-2 text-[#1A1A1A]">
+                  <h3 className="font-serif text-base sm:text-lg font-bold mb-2 text-[#1A1A1A] leading-snug">
                     {feature.title}
                   </h3>
-                  <p className="text-[#1A1A1A]/80 text-sm leading-relaxed">
+                  <p className="text-[#1A1A1A]/80 text-xs sm:text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </article>
