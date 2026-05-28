@@ -75,7 +75,7 @@ const products: Product[] = [
     description: 'Artículos promocionales de alta calidad: tazas, bolígrafos, llaveros y más con tu identidad corporativa.',
     image: '/merchandising-empresarial-cali.webp',
     images: [
-      { src: '/merchandising-empresarial-cali.webp', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
+      { src: '/merchandising-mpresarial-cali.webp', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
       { src: '/merchandising-empresarial-cali.webp', alt: 'Kit corporativo personalizado con mugs y artículos promocionales' },
       { src: '/merchandising-empresarial-cali.webp', alt: 'Material POP personalizado' },
     ],
