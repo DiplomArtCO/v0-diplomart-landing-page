@@ -69,8 +69,8 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* Stats Row - Always 3 columns */}
-          <div className="grid grid-cols-3 justify-center gap-2 md:gap-13 my-4">
+          {/* Stats Row - 2 columns */}
+          <div className="grid grid-cols-2 justify-center gap-2 md:gap-13 my-4">
             <div className="text-center px-1">
               <div className="font-serif text-2xl md:text-5xl font-bold text-[#D7B63A] leading-tight">25+</div>
               <div className="text-xs md:text-base text-[#1A1A1A]/60 font-medium mt-0.5 md:mt-1">AÑOS</div>
@@ -78,10 +78,6 @@ export default function Hero() {
             <div className="text-center px-1">
               <div className="font-serif font-bold text-[#D7B63A] text-base md:text-3xl leading-snug">{"Personalización"}</div>
               <div className="text-[#1A1A1A]/60 font-medium mt-0.5 md:mt-1 text-xs md:text-base">{"AL DETALLE"}</div>
-            </div>
-            <div className="text-center px-1">
-              <div className="font-serif text-2xl md:text-5xl font-bold text-[#D7B63A] leading-tight">100%</div>
-              <div className="text-xs md:text-base text-[#1A1A1A]/60 font-medium mt-0.5 md:mt-1">CALIDAD</div>
             </div>
           </div>
         </div>
