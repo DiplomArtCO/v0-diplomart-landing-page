@@ -15,6 +15,10 @@ const clientLogos = [
   { src: '/logo-clan.webp', alt: 'Colegio Los Ángeles del Norte Cali', url: '#' },
   { src: '/logo-anglo-americano.webp', alt: 'Colegio Anglo Americano Cali', url: 'https://www.colegioangloamericano.edu.co' },
   { src: '/logo-consac.webp', alt: 'Colegio Nuestra Señora de la Anunciacion Cali', url: '#' },
+  { src: '/logo-sam.webp', alt: 'Clínica Liderazgo SAM San Ambrosio de Milán Cali', url: '#' },
+  { src: '/logo-dempresa.webp', alt: 'DEMPRESA', url: '#' },
+  { src: '/logo-ces.webp', alt: 'Colegio CES Cali', url: '#' },
+  { src: '/logo-moderno-decepaz.webp', alt: 'Instituto Moderno de Paz Cali', url: '#' },
 ]
 
 // Duplicate logos multiple times for seamless infinite carousel
