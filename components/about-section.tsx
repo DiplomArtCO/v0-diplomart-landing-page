@@ -36,7 +36,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="bg-[#F5F5F7] py-10" aria-labelledby="about-heading">
+    <section id="nosotros" className="bg-[#F5F5F7] pt-7.5 pb-10" aria-labelledby="about-heading">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left Column - Text Content and Stats */}
@@ -47,12 +47,12 @@ export default function AboutSection() {
             <h2 id="about-heading" className="font-serif text-4xl md:text-5xl font-bold mb-6 text-balance">
               Más de 25 Años <span className="text-[#D7B63A]">Creando Excelencia</span>
             </h2>
-            <p className="text-[#1A1A1A]/70 leading-relaxed mb-6">
+            <p className="text-[#1A1A1A]/70 leading-relaxed mb-0.5">
               En <b>Diplomart</b>, transformamos los logros académicos y corporativos en piezas artísticas de distinción. Desde Cali, proveemos soluciones gráficas de alta calidad a instituciones educativas y empresas en todo el Valle del Cauca y Colombia, garantizando excelencia en cada detalle.
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap mb-8 gap-8">
+            <div className="flex flex-wrap mb-3.5 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <div className="font-serif text-4xl font-bold text-[#D7B63A] text-center">{stat.value}</div>

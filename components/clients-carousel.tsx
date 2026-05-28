@@ -23,7 +23,7 @@ const extendedLogos = [...clientLogos, ...clientLogos, ...clientLogos]
 
 export default function ClientsCarousel() {
   return (
-    <section className="bg-[#D7B63A]/15 overflow-hidden py-8">
+    <section className="bg-[#D7B63A]/15 overflow-hidden py-4.5">
       <div className="mb-8 text-center">
         <p className="text-[#1A1A1A]/60 font-medium text-sm uppercase tracking-wider">
           INSTITUCIONES QUE CONFÍAN EN NOSOTROS
@@ -33,7 +33,7 @@ export default function ClientsCarousel() {
       {/* Infinite Logo Carousel Container */}
       <div className="relative w-full overflow-hidden">
         {/* Scrolling Logos Wrapper */}
-        <div className="flex animate-scroll gap-8 items-center py-4">
+        <div className="flex animate-scroll gap-8 items-center pt-0 pb-2.25">
           {extendedLogos.map((logo, index) => (
             <a
               key={`${logo.alt}-${index}`}

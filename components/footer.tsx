@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#D7B63A]/15 border-t border-[#D7B63A]/20">
-      <div className="container mx-auto px-4 py-5">
+      <div className="container mx-auto px-4 py-0">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Column 1 - Company Bio */}
           <article>
@@ -127,7 +127,7 @@ export default function Footer() {
 
       {/* Bottom Bar - Copyright */}
       <div className="border-t border-[#D7B63A]/20">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 pt-2.25 pb-2.5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#1A1A1A]/60">
             <p>© 2026 Diplomart. Todos los derechos reservados.</p>
             <p className="flex items-center gap-2">
