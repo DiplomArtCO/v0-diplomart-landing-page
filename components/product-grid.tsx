@@ -60,7 +60,7 @@ const products: Product[] = [
     id: 'totebags',
     title: 'Totebags',
     description: 'Bolsas ecológicas personalizadas con tu marca. Ideales para eventos, conferencias y promociones.',
-    image: '/totebag-estapado.webp',
+    image: '/totebag-estampado.webp',
     images: [
       { src: '/totebag-estampado.webp', alt: 'Totebag blanco con diseño personzaliado estampado' },
       { src: '/totebag-personalizado.webp', alt: 'Bolsa ecológica de algodón con imagen estampada' },
