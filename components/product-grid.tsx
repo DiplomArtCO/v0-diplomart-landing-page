@@ -60,7 +60,7 @@ const products: Product[] = [
     id: 'totebags',
     title: 'Totebags',
     description: 'Bolsas ecológicas personalizadas con tu marca. Ideales para eventos, conferencias y promociones.',
-    image: '/totebag-estampado.webp',
+    image: '/totebag-estapado.webp',
     images: [
       { src: '/totebag-estampado.webp', alt: 'Totebag blanco con diseño personzaliado estampado' },
       { src: '/totebag-personalizado.webp', alt: 'Bolsa ecológica de algodón con imagen estampada' },
@@ -73,7 +73,7 @@ const products: Product[] = [
     id: 'merchandising',
     title: 'Merchandising',
     description: 'Artículos promocionales de alta calidad: tazas, bolígrafos, llaveros y más con tu identidad corporativa.',
-    image: '/merchandising-emresarial-cali.webp',
+    image: '/merchandising-empresarial-cali.webp',
     images: [
       { src: '/merchandising-empresarial-cali.webp', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
       { src: '/merchandising-empresarial-cali.webp', alt: 'Kit corporativo personalizado con mugs y artículos promocionales' },
