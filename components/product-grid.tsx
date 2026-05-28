@@ -33,7 +33,7 @@ const products: Product[] = [
     id: 'diplomas',
     title: 'Diplomas',
     description: 'Paquete de Diploma y Acta para Instituciones Educativas.',
-    image: '/kit-diploma-carpeta-acta.png',
+    image: '/kit-diploma-carpeta-act.webp',
     images: [
       { src: '/kit-diploma-carpeta-act.webp', alt: 'Kit completo diploma carpeta acta con presentación premium Cali' },
     ],
@@ -44,9 +44,9 @@ const products: Product[] = [
     id: 'agendas',
     title: 'Agendas',
     description: 'Agendas ejecutivas y corporativas con encuadernación premium. Ideales para Kits empresariales y Merch Empresarial.',
-    image: '/agendas-argollada-personalizada.png',
+    image: '/agendas-argollada-personalizada.webp',
     images: [
-      { src: '/agendas-argollada-personalizada.png', alt: 'Agenda argollada personalizada con encuadernación en pasta dura Cali' },
+      { src: '/agendas-argollada-personalizada.webp', alt: 'Agenda argollada personalizada con encuadernación en pasta dura Cali' },
       { src: '/cuaderno-argollado-personalizado.webp', alt: 'Cuaderno argollado con diseño personalizado Cali' },
       { src: '/agenda-corporativa-personalizada.webp', alt: 'Agenda corporativa cosida con diseño personalizado Cali' },
       { src: '/cuaderno-corporativo-personalizado.webp', alt: 'Cuaderno empresarial personalizado argollado Cali' },
@@ -60,7 +60,7 @@ const products: Product[] = [
     id: 'totebags',
     title: 'Totebags',
     description: 'Bolsas ecológicas personalizadas con tu marca. Ideales para eventos, conferencias y promociones.',
-    image: '/totebag-estampado.jpeg',
+    image: '/totebag-estampado.webp',
     images: [
       { src: '/totebag-estampado.webp', alt: 'Totebag blanco con diseño personzaliado estampado' },
       { src: '/totebag-personalizado.webp', alt: 'Bolsa ecológica de algodón con imagen estampada' },
@@ -73,7 +73,7 @@ const products: Product[] = [
     id: 'merchandising',
     title: 'Merchandising',
     description: 'Artículos promocionales de alta calidad: tazas, bolígrafos, llaveros y más con tu identidad corporativa.',
-    image: '/merchandising-empresarial-cali.png',
+    image: '/merchandising-empresarial-cali.webp',
     images: [
       { src: '/merchandising-empresarial-cali.webp', alt: 'Merchandising empresarial con taza, totebag, agendas y bolígrafos. Todo personalizado' },
       { src: '/merchandising-empresarial-cali.webp', alt: 'Kit corporativo personalizado con mugs y artículos promocionales' },
