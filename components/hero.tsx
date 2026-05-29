@@ -31,7 +31,7 @@ export default function Hero() {
             {/* Hand Image - Left (50% smaller) */}
             <figure className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <Image 
-                src="/mano-negra.png" 
+                src="/mano-negra.webp" 
                 alt="Mano Negra sosteniendo diploma - Simbolo de El Esfuerzo Hecho Arte" 
                 width={150} 
                 height={200}
