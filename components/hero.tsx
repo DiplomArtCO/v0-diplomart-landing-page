@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Phone } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * Hero Section - Sección principal de la landing page
@@ -54,7 +55,10 @@ export default function Hero() {
           {/* CTA Buttons - Centered below */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-9.6">
             <Button 
-              onClick={() => scrollToSection('contacto')}
+              onClick={() => {
+                trackEvent('cta_click', { placement: 'hero', action: 'quote' })
+                scrollToSection('contacto')
+              }}
               size="lg"
               className="bg-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/90 font-semibold text-base group"
             >
@@ -64,7 +68,10 @@ export default function Hero() {
             </Button>
             
             <Button 
-              onClick={() => scrollToSection('productos')}
+              onClick={() => {
+                trackEvent('cta_click', { placement: 'hero', action: 'products' })
+                scrollToSection('productos')
+              }}
               size="lg"
               variant="outline"
               className="border-2 border-[#D7B63A] text-[#1A1A1A] hover:bg-[#D7B63A]/10 font-semibold text-base bg-transparent"

@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * Contact Section Component - Formulario de contacto y cotización
@@ -39,6 +40,10 @@ export default function ContactSection() {
     const encodedMessage = encodeURIComponent(messageText)
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
     
+    trackEvent('generate_lead', {
+      method: 'whatsapp_form',
+      product: formData.product || 'unknown',
+    })
     window.open(whatsappUrl, '_blank')
   }
 
@@ -85,7 +90,13 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Teléfono</h3>
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getDefaultMessage(formData.name, formData.product))}`} target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">+57 318 483 6892</a>
+                  <a
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getDefaultMessage(formData.name, formData.product))}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('contact_click', { method: 'whatsapp_phone' })}
+                    className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors"
+                  >+57 318 483 6892</a>
                 </div>
               </div>
             </div>
@@ -97,7 +108,11 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Email</h3>
-                  <a href="mailto:info@diplomart.com.co" className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors">info@diplomart.com.co</a>
+                  <a
+                    href="mailto:info@diplomart.com.co"
+                    onClick={() => trackEvent('contact_click', { method: 'email' })}
+                    className="text-[#1A1A1A]/70 hover:text-[#D7B63A] transition-colors"
+                  >info@diplomart.com.co</a>
                 </div>
               </div>
             </div>
@@ -123,10 +138,12 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pl-3.75">
                 {/* Nombre completo */}
                 <div className="md:col-span-2">
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
+                  <label htmlFor="nombre" className="block text-[#1A1A1A] font-semibold mb-2">
                     Nombre completo <span className="text-red-600">*</span>
                   </label>
                   <Input
+                    id="nombre"
+                    name="name"
                     required
                     placeholder="Tu nombre"
                     value={formData.name}
@@ -137,12 +154,13 @@ export default function ContactSection() {
 
                 {/* Producto de interés */}
                 <div className="md:col-span-2">
-                  <label className="block text-[#1A1A1A] font-semibold mb-2">
+                  <label htmlFor="producto" className="block text-[#1A1A1A] font-semibold mb-2">
                     Producto de interés <span className="text-red-600">*</span>
                   </label>
                   <Select required onValueChange={(value) => setFormData({ ...formData, product: value })}>
                     <SelectTrigger
                       className="bg-white border-[#D7B63A]/30"
+                      id="producto"
                       aria-label="Producto de interés"
                     >
                       <SelectValue placeholder="Selecciona un producto" />
@@ -202,7 +220,10 @@ export default function ContactSection() {
               <div className="flex h-[350px] flex-col items-center justify-center rounded-lg bg-[#D7B63A]/20 p-6 text-center shadow-lg">
                 <MapPin className="mb-3 h-10 w-10 text-[#1A1A1A]" aria-hidden="true" />
                 <p className="mb-4 font-semibold">Calle 20 #3-22, Cali</p>
-                <Button type="button" onClick={() => setShowMap(true)}>
+                <Button type="button" onClick={() => {
+                  trackEvent('view_map', { location: 'cali' })
+                  setShowMap(true)
+                }}>
                   Ver mapa
                 </Button>
               </div>
