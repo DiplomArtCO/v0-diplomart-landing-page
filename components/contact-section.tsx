@@ -16,6 +16,7 @@ import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react'
  */
 
 export default function ContactSection() {
+  const [showMap, setShowMap] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     product: '',
@@ -140,7 +141,10 @@ export default function ContactSection() {
                     Producto de interés <span className="text-red-600">*</span>
                   </label>
                   <Select required onValueChange={(value) => setFormData({ ...formData, product: value })}>
-                    <SelectTrigger className="bg-white border-[#D7B63A]/30">
+                    <SelectTrigger
+                      className="bg-white border-[#D7B63A]/30"
+                      aria-label="Producto de interés"
+                    >
                       <SelectValue placeholder="Selecciona un producto" />
                     </SelectTrigger>
                     <SelectContent>
@@ -182,16 +186,27 @@ export default function ContactSection() {
 
           {/* Right Column - Google Maps */}
           <aside className="lg:col-span-1 leading-[2.5em]" aria-label="Mapa de ubicación">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.823506558!2d-76.522529!3d3.437266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0a0a0a0a0a1%3A0x1234567890abcdef!2sCalle%2020%20%233-22%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890"
-              width="100%"
-              height="350"
-              style={{ border: 0, borderRadius: '0.5rem' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg shadow-lg"
-            ></iframe>
+            {showMap ? (
+              <iframe
+                title="Ubicación de DiplomArt en Cali"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.823506558!2d-76.522529!3d3.437266!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a0a0a0a0a0a1%3A0x1234567890abcdef!2sCalle%2020%20%233-22%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890"
+                width="100%"
+                height="350"
+                style={{ border: 0, borderRadius: '0.5rem' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg shadow-lg"
+              />
+            ) : (
+              <div className="flex h-[350px] flex-col items-center justify-center rounded-lg bg-[#D7B63A]/20 p-6 text-center shadow-lg">
+                <MapPin className="mb-3 h-10 w-10 text-[#1A1A1A]" aria-hidden="true" />
+                <p className="mb-4 font-semibold">Calle 20 #3-22, Cali</p>
+                <Button type="button" onClick={() => setShowMap(true)}>
+                  Ver mapa
+                </Button>
+              </div>
+            )}
           </aside>
         </div>
       </div>

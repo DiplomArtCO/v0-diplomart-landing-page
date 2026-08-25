@@ -35,6 +35,7 @@ export default function Hero() {
                 alt="Mano Negra sosteniendo diploma - Simbolo de El Esfuerzo Hecho Arte" 
                 width={150} 
                 height={200}
+                sizes="128px"
                 className="object-contain leading-10 size-32"
               />
             </figure>

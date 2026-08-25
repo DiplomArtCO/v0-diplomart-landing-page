@@ -54,6 +54,7 @@ export default function ClientsCarousel() {
                 alt={logo.alt}
                 width={112}
                 height={112}
+                sizes="112px"
                 className="h-full w-full object-contain"
               />
             </a>
