@@ -423,7 +423,7 @@ export const products: Record<string, ProductRecord> = {
 }
 
 export function getProduct(slug: string): ProductRecord | null {
-  return products[slug] || null
+  return products[slug] || products[slug.replace(/-/g, '_')] || null
 }
 
 export function getAllProductSlugs(): string[] {
