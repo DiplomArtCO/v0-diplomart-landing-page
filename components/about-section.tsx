@@ -1,4 +1,4 @@
-import { Award, Clock, Users, ShieldCheck } from 'lucide-react'
+import { Award, Clock, Users } from 'lucide-react'
 
 /**
  * About Section Component - Sobre Nosotros
@@ -21,11 +21,6 @@ const features = [
     icon: Users,
     title: 'Atención Personalizada',
     description: 'Cada cliente recibe un trato único y dedicado.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Seguridad',
-    description: 'Medidas de seguridad Anti-falsificación'
   }
 ]
 

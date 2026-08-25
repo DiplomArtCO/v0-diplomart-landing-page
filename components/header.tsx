@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import { Phone } from 'lucide-react'
 
 /**
@@ -20,16 +20,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   const handleLogoClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  const homeSectionHref = (id: string) => `/#${id}`
 
   return (
     <header 
@@ -42,7 +37,8 @@ export default function Header() {
       <div className="container mx-auto px-4 py-1.5">
         <div className="flex items-center justify-between">
           {/* Logo - Clicable para ir al inicio */}
-          <button 
+          <Link
+            href="/#inicio"
             onClick={handleLogoClick}
             className="flex items-center hover:opacity-80 transition-opacity"
             aria-label="Volver al inicio"
@@ -54,44 +50,32 @@ export default function Header() {
               height={50}
               className="w-12 h-12 md:h-14 md:w-[168px]"
             />
-          </button>
+          </Link>
 
           {/* Navigation Menu - Oculto en móvil */}
           <nav className="hidden md:flex items-center gap-8">
-            <button 
-              onClick={() => scrollToSection('inicio')}
-              className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif"
-            >
+            <Link href={homeSectionHref('inicio')} className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif">
               INICIO
-            </button>
-            <button 
-              onClick={() => scrollToSection('productos')}
-              className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif"
-            >
+            </Link>
+            <Link href={homeSectionHref('productos')} className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif">
               PRODUCTOS
-            </button>
-            <button 
-              onClick={() => scrollToSection('nosotros')}
-              className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif"
-            >
+            </Link>
+            <Link href={homeSectionHref('nosotros')} className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif">
               NOSOTROS
-            </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif"
-            >
+            </Link>
+            <Link href={homeSectionHref('contacto')} className="text-[#1A1A1A] font-medium hover:text-[#1A1A1A]/70 transition-colors font-serif">
               CONTACTO
-            </button>
+            </Link>
           </nav>
 
           {/* CTA Button - Cotizar Ahora */}
-          <Button 
-            onClick={() => scrollToSection('contacto')}
-            className="bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90 font-medium"
+          <Link
+            href={homeSectionHref('contacto')}
+            className="inline-flex items-center rounded-md bg-[#1A1A1A] px-4 py-2 text-sm font-medium text-white hover:bg-[#1A1A1A]/90"
           >
-            <Phone className="w-4 h-4 mr-2" />
+            <Phone className="mr-2 h-4 w-4" />
             Cotizar Ahora
-          </Button>
+          </Link>
         </div>
       </div>
     </header>

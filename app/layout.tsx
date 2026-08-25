@@ -17,15 +17,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'DiplomArt - El Esfuerzo Hecho Arte',
-  description: 'Transformamos tus logros en piezas únicas. Diplomas, agendas y merchandising de calidad para instituciones educativas y empresas en Cali, Colombia.',
+  title: 'Diplomas y Soluciones Grafica en Cali',
+  description: 'Brindamos Soluciones Graficas. Diplomas, agendas, Merchandising y Material POP de calidad para instituciones educativas y empresas en Cali, Colombia.',
   generator: 'v0.app',
-  keywords: ['diplomas', 'certificados', 'agendas corporativas', 'merchandising', 'Cali', 'Colombia'],
+  keywords: ['diplomas', 'certificados', 'agendas corporativas', 'merchandising', 'Cali', 'Colombia', 'Paquete de Diplomas', 'actas'],
 
   // --- PROPIEDAD OPEN GRAPH AÑADIDA ---
   openGraph: {
     title: 'Diplomart | Diplomas y Agendas Personalizadas',
-    description: 'Líderes en Merchandising Empresarial y Diplomas en Cali. ¡Haz que tus logros sean Arte!',
+    description: 'Líderes en Merchandising Empresarial y Diplomas en Cali.',
     url: 'https://diplomart.com.co', // Cambia esto por tu URL real
     siteName: 'DiplomArt',
     images: [
