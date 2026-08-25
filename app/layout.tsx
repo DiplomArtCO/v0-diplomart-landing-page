@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'DiplomArt - El Esfuerzo Hecho Arte',
+  title: 'Diplomas y Soluciones Grafica en Cali',
   description: 'Transformamos tus logros en piezas únicas. Diplomas, agendas y merchandising de calidad para instituciones educativas y empresas en Cali, Colombia.',
   generator: 'v0.app',
   keywords: ['diplomas', 'certificados', 'agendas corporativas', 'merchandising', 'Cali', 'Colombia'],
