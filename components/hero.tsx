@@ -41,6 +41,9 @@ export default function Hero() {
 
             {/* Description - Right, aligned to right */}
             <div className="flex-1 text-center lg:text-right">
+              <h1 className="font-serif text-2xl md:text-4xl font-bold text-[#1A1A1A] mb-3 text-balance">
+                Diplomas, Agendas y Merchandising Personalizado en Cali
+              </h1>
               <p className="text-base md:text-lg text-[#1A1A1A]/70 leading-relaxed text-pretty">
                 Líderes en <span className="font-bold text-[#1A1A1A]">soluciones gráficas integrales</span> para instituciones y corporaciones. Nuestra oferta incluye paquetes completos de graduación: <span className="font-bold text-[#D7B63A]">Diplomas, Actas y Carpetas</span>; y productos de <span className="font-bold text-[#D7B63A]">branding/merchandising</span> para posicionar TU marca. Trayectoria de <span className="font-bold text-[#1A1A1A]">+25 años</span> garantizando distinción, calidad y cumplimiento.
               </p>

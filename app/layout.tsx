@@ -17,25 +17,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'DiplomArt - El Esfuerzo Hecho Arte',
-  description: 'Transformamos tus logros en piezas únicas. Diplomas, agendas y merchandising de calidad para instituciones educativas y empresas en Cali, Colombia.',
-  generator: 'v0.app',
-  keywords: ['diplomas', 'certificados', 'agendas corporativas', 'merchandising', 'Cali', 'Colombia'],
-
-  // --- PROPIEDAD OPEN GRAPH AÑADIDA ---
+  metadataBase: new URL('https://www.diplomart.com.co'),
+  title: 'Diplomas Personalizados, Agendas y Merchandising en Cali | DiplomArt',
+  description: 'Diplomas personalizados, actas de grado, carpetas porta diplomas, agendas corporativas y merchandising empresarial para instituciones y empresas en Cali y Colombia. +25 años de trayectoria.',
+  keywords: ['diplomas personalizados', 'diplomas Cali', 'actas de grado', 'carpetas porta diplomas', 'paquetes de graduación', 'agendas corporativas', 'merchandising empresarial', 'certificados', 'Cali', 'Colombia'],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: 'Diplomart | Diplomas y Agendas Personalizadas',
-    description: 'Líderes en Merchandising Empresarial y Diplomas en Cali. ¡Haz que tus logros sean Arte!',
-    url: 'https://diplomart.com.co', // Cambia esto por tu URL real
+    title: 'DiplomArt | Diplomas y Agendas Personalizadas en Cali',
+    description: 'Líderes en diplomas, paquetes de graduación y merchandising empresarial en Cali. ¡Haz que tus logros sean Arte!',
+    url: 'https://www.diplomart.com.co',
     siteName: 'DiplomArt',
-    images: [
-      {
-        url: '/og-image.png', // Debes crear esta imagen y guardarla en la carpeta /public
-        width: 1200,
-        height: 630,
-        alt: 'Muestra de Agendas y Diplomas Diplomart',
-      },
-    ],
     locale: 'es_CO',
     type: 'website',
   },
@@ -86,6 +83,30 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'DiplomArt',
+              description: 'Diplomas personalizados, actas de grado, carpetas porta diplomas, agendas corporativas y merchandising empresarial en Cali, Colombia.',
+              url: 'https://www.diplomart.com.co',
+              telephone: '+57 318 483 6892',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Calle 20 #3-22',
+                addressLocality: 'Cali',
+                addressRegion: 'Valle del Cauca',
+                addressCountry: 'CO',
+              },
+              openingHours: 'Mo-Sa 07:00-18:00',
+              foundingDate: '2000',
+              areaServed: ['Cali', 'Valle del Cauca', 'Colombia'],
+              knowsAbout: ['diplomas personalizados', 'paquetes de graduación', 'agendas corporativas', 'merchandising empresarial'],
+            }),
+          }}
+        />
         {children}
         <WhatsAppButton />
         <Analytics />
