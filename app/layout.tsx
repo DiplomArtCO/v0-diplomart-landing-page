@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta name="msvalidate.01" content="AD3DB1DF7889814D687181E05AFBFD2A" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8DFQPGVDZD"
